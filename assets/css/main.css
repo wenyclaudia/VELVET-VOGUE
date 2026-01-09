@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .hero-header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-bg.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,54 +92,9 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     color: #6c757d;
 }
 
-.product-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
 
-.product-card .card-body {
-    padding: 1.5rem;
-}
 
-.product-card .card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.product-card .card-text {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #005f73;
-}
-
-.why-us-section {
-    background-color: #f8f9fa;
-    padding: 6rem 0;
-}
-
-.why-us-section .icon-box {
-    text-align: center;
-    padding: 2rem;
-}
-
-.why-us-section .icon-box i {
-    font-size: 3rem;
-    color: #005f73;
-    margin-bottom: 1.5rem;
-}
-
-.why-us-section .icon-box h5 {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
 
 .footer {
     background-color: #343a40;
@@ -254,6 +209,9 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .product-image-container img {
     width: 100%;
     height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
     display: block;
 }
 
@@ -281,7 +239,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 .product-info {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .product-category {
@@ -344,6 +302,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 /* --- Dynamic Gallery --- */
 .gallery-card {
     position: relative;
+    height: auto;
+    aspect-ratio: 3 / 4;
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;

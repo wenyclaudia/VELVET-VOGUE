@@ -1,165 +1,255 @@
-/* ========================================
-   CUSTOM JAVASCRIPT - VELVET & VOGUE
-   REFACTORED FOR SINGLE-PAGE STRUCTURE
-========================================
-*/
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. AOS (Animate on Scroll) Initialization ---
+    // --- 1. INISIALISASI AOS ---
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
+            duration: 1000,
+            once: true,
+            offset: 50,
         });
     }
 
-    // --- 2. Dynamic Gallery Rendering ---
-    renderGallery();
+    // --- 2. LOGIKA NAVBAR (Scroll Effect) ---
+    const navbar = document.querySelector('.navbar');
+    const heroHeader = document.querySelector('.hero-header'); // Cek apakah ada hero header (hanya di index)
 
-    // --- 3. Contact Form Validation ---
-    setupContactForm();
-
-    // --- 4. Navbar Active Link On Scroll ---
-    // Bootstrap's ScrollSpy is now handling this automatically
-    // via attributes in the HTML (body tag). We add a manual
-    // script to handle smooth scrolling.
-    setupSmoothScrolling();
-
-});
-
-
-// ========== DYNAMIC GALLERY LOGIC ==========
-
-const galleryData = [
-    {
-        id: 1,
-        title: "Summer Vibes",
-        category: "Collection",
-        imageUrl: "assets/img/medium/img1.png",
-        largeImageUrl: "assets/img/large/img1.png",
-    },
-    {
-        id: 2,
-        title: "Urban Street Style",
-        category: "Lookbook",
-        imageUrl: "assets/img/medium/img2.png",
-        largeImageUrl: "assets/img/large/img2.png",
-    },
-    {
-        id: 3,
-        title: "Elegant Evening Wear",
-        category: "Campaign",
-        imageUrl: "assets/img/medium/img3.png",
-        largeImageUrl: "assets/img/large/img3.png",
-    },
-    {
-        id: 4,
-        title: "Casual Comfort",
-        category: "New Arrivals",
-        imageUrl: "https://placehold.co/600x400/DAC0A3/000000?text=Casual",
-        largeImageUrl: "https://placehold.co/1200x800/DAC0A3/000000?text=Casual",
-    },
-    {
-        id: 5,
-        title: "Modern Professional",
-        category: "Workwear",
-        imageUrl: "https://placehold.co/600x400/1B4242/FFFFFF?text=Modern",
-        largeImageUrl: "https://placehold.co/1200x800/1B4242/FFFFFF?text=Modern",
-    },
-    {
-        id: 6,
-        title: "Autumn Layers",
-        category: "Collection",
-        imageUrl: "https://placehold.co/600x400/5C5470/FFFFFF?text=Autumn",
-        largeImageUrl: "https://placehold.co/1200x800/5C5470/FFFFFF?text=Autumn",
+    if (navbar && heroHeader) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-sm');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-sm');
+            }
+        });
     }
-];
 
-function renderGallery() {
-    const galleryContainer = document.getElementById("gallery-container");
-    if (!galleryContainer) return;
+    // --- 3. DYNAMIC GALLERY (Index Page) ---
+    const galleryItems = [
+        { title: "Autumn Collection", category: "Lookbook", image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=600&q=80" },
+        { title: "Urban Explorer", category: "Campaign", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" },
+        { title: "Evening Elegance", category: "Style Guide", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=600&q=80" },
+        { title: "Casual Comfort", category: "New Arrivals", image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=600&q=80" },
+        { title: "Street Style", category: "Lookbook", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" },
+        { title: "Summer Vibes", category: "Campaign", image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" },
+    ];
 
-    let galleryHTML = "";
-    galleryData.forEach((item, index) => {
-        galleryHTML += `
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${index * 100}">
-                <div class="gallery-card" onclick="openGallery('${item.largeImageUrl}', '${item.title}')">
-                    <img src="${item.imageUrl}" alt="${item.title}" class="gallery-card-img">
-                    <div class="gallery-card-overlay">
-                        <div class="gallery-card-content">
-                            <h5 class="gallery-card-title">${item.title}</h5>
-                            <p class="gallery-card-category">${item.category}</p>
+    const galleryContainer = document.getElementById('gallery-container');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+
+    // Hanya jalankan jika container galeri ada (di index.html)
+    if (galleryContainer) {
+        galleryItems.forEach(item => {
+            const galleryCard = `
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img-src="${item.image}" data-caption="${item.title} - ${item.category}">
+                        <img src="${item.image}" alt="${item.title}" class="gallery-card-img">
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <h5 class="gallery-card-title">${item.title}</h5>
+                                <p class="gallery-card-category">${item.category}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
-    });
+            `;
+            galleryContainer.innerHTML += galleryCard;
+        });
 
-    galleryContainer.innerHTML = galleryHTML;
-}
-
-// ========== MODAL LOGIC (for Gallery) ==========
-
-function openGallery(imageSrc, captionText) {
-    const modalElement = document.getElementById('galleryModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalCap = document.getElementById('modalCaption');
-
-    if (modalElement && modalImg && modalCap) {
-        modalImg.src = imageSrc;
-        modalCap.innerText = captionText;
-        const myModal = new bootstrap.Modal(modalElement);
-        myModal.show();
+        // Event Listener untuk Modal
+        const galleryModal = document.getElementById('galleryModal');
+        if (galleryModal) {
+            galleryModal.addEventListener('show.bs.modal', function (event) {
+                const card = event.relatedTarget;
+                const imgSrc = card.getAttribute('data-img-src');
+                const caption = card.getAttribute('data-caption');
+                modalImage.src = imgSrc;
+                modalCaption.textContent = caption;
+            });
+        }
     }
-}
 
+    // --- 4. FORM CONTACT ---
+    const contactForm = document.getElementById('contact-form');
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+    }
 
-// ========== CONTACT FORM ==========
+    // --- 5. LOGIKA PRODUK & PAGINASI (Products Page) ---
+    // Data Dummy Produk (Minimal 9 item agar ada 3 halaman)
+    const products = [
+        { id: 1, name: "Urban Oversized Shirt", category: "MEN", price: "$25.00", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=60", rating: 4 },
+        { id: 2, name: "Classic Denim Jacket", category: "MEN", price: "$90.00", image: "https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=500&q=60", rating: 5 },
+        { id: 3, name: "Minimalist Gold Watch", category: "ACCESSORIES", price: "$250.00", image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=500&q=60", rating: 4.5 },
+        { id: 4, name: "Summer Floral Dress", category: "WOMEN", price: "$45.00", image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=500&q=60", rating: 5 },
+        { id: 5, name: "Leather Weekend Bag", category: "ACCESSORIES", price: "$120.00", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=60", rating: 4 },
+        { id: 6, name: "Slim Fit Chinos", category: "MEN", price: "$35.00", image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=500&q=60", rating: 4 },
+        { id: 7, name: "Evening Silk Gown", category: "WOMEN", price: "$150.00", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=60", rating: 5 },
+        { id: 8, name: "Casual Sneakers", category: "MEN", price: "$60.00", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=60", rating: 3.5 },
+        { id: 9, name: "Aviator Sunglasses", category: "ACCESSORIES", price: "$15.00", image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=500&q=60", rating: 4 },
+        { id: 10, name: "Striped Polo Shirt", category: "MEN", price: "$30.00", image: "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=500&q=60", rating: 4 }
+    ];
 
-function setupContactForm() {
-    const contactForm = document.getElementById("contact-form");
-    if (!contactForm) return;
+    const itemsPerPage = 3; 
+    let currentPage = 1;
+    let currentCategory = 'ALL';
+    let searchQuery = '';
 
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+    // Helper: Filter Data berdasarkan Kategori & Search
+    function getFilteredProducts() {
+        return products.filter(product => {
+            const matchCategory = currentCategory === 'ALL' || product.category === currentCategory;
+            const matchSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchCategory && matchSearch;
+        });
+    }
+
+    // Fungsi Render Produk
+    function renderProducts(page) {
+        const productContainer = document.getElementById('product-list');
+        const paginationContainer = document.getElementById('pagination');
         
-        // Basic validation check
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+        // Stop jika elemen tidak ditemukan (misal sedang di index.html)
+        if (!productContainer || !paginationContainer) return; 
 
-        if (name === "" || email === "" || message === "") {
-            alert("Please fill out all fields.");
+        productContainer.innerHTML = ''; // Reset isi container
+        
+        // 1. Ambil data yang sudah difilter
+        const filteredProducts = getFilteredProducts();
+
+        // 2. Cek jika hasil kosong
+        if (filteredProducts.length === 0) {
+            productContainer.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h3>No products found</h3>
+                    <p class="text-muted">Try adjusting your search or filter.</p>
+                </div>`;
+            paginationContainer.innerHTML = '';
             return;
         }
 
-        // Simulate successful submission
-        alert("Message sent successfully! (This is a simulation)");
-        contactForm.reset();
-    });
-}
+        // 3. Hitung Total Page Baru
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        
+        // Reset ke page 1 jika page saat ini melebihi total page baru
+        if (page > totalPages) page = 1;
+        currentPage = page;
 
+        // 4. Slice Data untuk Pagination
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedItems = filteredProducts.slice(start, end);
 
-// ========== UTILITIES ==========
+        // Inject HTML Produk
+        paginatedItems.forEach(product => {
+            // Generate Bintang
+            let starsHtml = '';
+            for(let i=1; i<=5; i++) {
+                if(i <= product.rating) starsHtml += '<i class="fas fa-star text-warning"></i>';
+                else if(i === Math.ceil(product.rating) && !Number.isInteger(product.rating)) starsHtml += '<i class="fas fa-star-half-alt text-warning"></i>';
+                else starsHtml += '<i class="far fa-star text-warning"></i>';
+            }
 
-function setupSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            const productCard = `
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="product-card-new h-100">
+                        <div class="product-image-container">
+                            <img src="${product.image}" alt="${product.name}" class="img-fluid">
+                            <div class="product-hover-overlay">
+                                <button class="btn btn-light" onclick="alert('Added to Cart: ${product.name}')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">${product.category}</div>
+                            <h5 class="product-title">${product.name}</h5>
+                            <div class="product-price">${product.price}</div>
+                            <div class="product-rating">${starsHtml}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productContainer.innerHTML += productCard;
+        });
 
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
+        // Update Tombol Pagination
+        let paginationHtml = '';
 
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Tombol Previous
+        paginationHtml += `
+            <li class="page-item ${page === 1 ? 'disabled' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${page - 1}); return false;">Previous</a>
+            </li>
+        `;
+
+        // Tombol Angka
+        for (let i = 1; i <= totalPages; i++) {
+            paginationHtml += `
+                <li class="page-item ${i === page ? 'active' : ''}">
+                    <a class="page-link" href="#" onclick="changePage(${i}); return false;">${i}</a>
+                </li>
+            `;
+        }
+
+        // Tombol Next
+        paginationHtml += `
+            <li class="page-item ${page === totalPages ? 'disabled' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${page + 1}); return false;">Next</a>
+            </li>
+        `;
+        
+        paginationContainer.innerHTML = paginationHtml;
+    }
+
+    // Fungsi Ganti Halaman (Global)
+    window.changePage = function(page) {
+        const filteredProducts = getFilteredProducts();
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        
+        if (page < 1 || page > totalPages) return;
+        
+        currentPage = page;
+        renderProducts(currentPage);
+        
+        // Scroll ke container produk (bukan ke paling atas halaman)
+        const productContainer = document.getElementById('product-list');
+        if (productContainer) {
+            const offset = 100; // Offset untuk navbar
+            const topPos = productContainer.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+        }
+    };
+
+    // Fungsi Ganti Kategori (Global)
+    window.filterCategory = function(category) {
+        currentCategory = category;
+        currentPage = 1; // Reset ke halaman 1 setiap ganti filter
+        
+        // Update UI Tombol Active
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            if(btn.dataset.category === category) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
             }
         });
-    });
-}
+
+        renderProducts(1);
+    };
+
+    // Event Listener Search Input
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderProducts(1); // Render ulang real-time saat mengetik
+        });
+    }
+
+    // Jalankan render pertama kali
+    renderProducts(currentPage);
+});

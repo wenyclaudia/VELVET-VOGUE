@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velvet & Vogue - Modern Fashion Store</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Google Analytics (Placeholder - Ganti G-XXXXXXXXXX dengan ID asli Anda) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80">
 
@@ -52,7 +65,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8" data-aos="fade-up">
-                        <div class="card text-center shadow-lg">
+                        <div class="card text-center shadow-lg border-0" style="border-radius: 15px; overflow: hidden;">
                             <div class="card-body p-5">
                                 <h2 class="card-title display-3 fw-bold text-primary">END OF SEASON SALE</h2>
                                 <p class="card-text lead my-4">Get up to <span class="fw-bold">50% OFF</span> on selected items. <br>Limited time offer!</p>
@@ -76,32 +89,41 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="product-card">
-                            <img src="assets/img/products/shirt.png" class="card-img-top" alt="Urban Shirt">
-                            <div class="card-body">
-                                <h5 class="card-title">Urban Oversized Shirt</h5>
-                                <p class="card-text">$25.00</p>
-                                <a href="products.html" class="btn btn-outline-primary w-100">View Details</a>
+                        <div class="product-card-new h-100 d-flex flex-column">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=60" alt="Urban Shirt">
+                            </div>
+                            <div class="product-info flex-grow-1 d-flex flex-column">
+                                <div class="product-category">MEN</div>
+                                <h5 class="product-title">Urban Oversized Shirt</h5>
+                                <p class="product-price">$25.00</p>
+                                <a href="products.html" class="btn btn-outline-primary w-100 mt-auto">View Details</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="product-card">
-                            <img src="assets/img/products/jacket.png" class="card-img-top" alt="Denim Jacket">
-                            <div class="card-body">
-                                <h5 class="card-title">Classic Denim Jacket</h5>
-                                <p class="card-text">$50.00</p>
-                                <a href="products.html" class="btn btn-outline-primary w-100">View Details</a>
+                        <div class="product-card-new h-100 d-flex flex-column">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=500&q=60" alt="Denim Jacket">
+                            </div>
+                            <div class="product-info flex-grow-1 d-flex flex-column">
+                                <div class="product-category">MEN</div>
+                                <h5 class="product-title">Classic Denim Jacket</h5>
+                                <p class="product-price">$50.00</p>
+                                <a href="products.html" class="btn btn-outline-primary w-100 mt-auto">View Details</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="product-card">
-                            <img src="assets/img/products/watch.png" class="card-img-top" alt="Minimalist Watch">
-                            <div class="card-body">
-                                <h5 class="card-title">Minimalist Watch</h5>
-                                <p class="card-text">$90.00</p>
-                                <a href="products.html" class="btn btn-outline-primary w-100">View Details</a>
+                        <div class="product-card-new h-100 d-flex flex-column">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=500&q=60" alt="Minimalist Watch">
+                            </div>
+                            <div class="product-info flex-grow-1 d-flex flex-column">
+                                <div class="product-category">ACCESSORIES</div>
+                                <h5 class="product-title">Minimalist Watch</h5>
+                                <p class="product-price">$90.00</p>
+                                <a href="products.html" class="btn btn-outline-primary w-100 mt-auto">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +157,7 @@
                 </div>
                 <div class="row align-items-center" data-aos="fade-up">
                     <div class="col-md-6">
-                        <img src="assets/img/large/img1.png" class="img-fluid rounded shadow" alt="Our Story">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Our Story">
                     </div>
                     <div class="col-md-6">
                         <h3 class="fw-bold">Our Story</h3>
@@ -198,11 +220,10 @@
                     <h5>VELVET & VOGUE</h5>
                     <p>Redefining modern fashion with our curated collections for the style-savvy individual.</p>
                     <div class="social-icons">
-                        <!-- social media links updated as per request. Official pages for instagram, twitter and pinterest were not found. -->
-                        <a href="https://www.instagram.com/tau_university/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/tau.university/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/tau_university" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/@TanriAbengUniversity" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-md-2 mb-4">
@@ -225,9 +246,9 @@
                 <div class="col-md-4 mb-4">
                     <h5>Subscribe to our Newsletter</h5>
                     <p>Get exclusive updates on new arrivals and special offers.</p>
-                    <form>
+                    <form action="#" method="post">
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address">
+                            <input type="email" class="form-control" name="email" placeholder="Your email address" aria-label="Your email address">
                             <button class="btn btn-primary" type="submit">Subscribe</button>
                         </div>
                     </form>
@@ -240,7 +261,7 @@
     </footer>
     
     <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
-    <a href="https://wa.me/1234567890" target="_blank" class="floating-btn">
+    <a href="https://wa.me/6281234567890" target="_blank" class="floating-btn">
         <i class="fab fa-whatsapp"></i>
     </a>
 
