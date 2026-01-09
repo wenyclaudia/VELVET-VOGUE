@@ -82,16 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5. LOGIKA PRODUK & PAGINASI (Products Page) ---
     // Data Dummy Produk (Minimal 9 item agar ada 3 halaman)
     const products = [
-        { id: 1, name: "Urban Oversized Shirt", category: "MEN", price: "$25.00", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=60", rating: 4 },
-        { id: 2, name: "Classic Denim Jacket", category: "MEN", price: "$90.00", image: "https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=500&q=60", rating: 5 },
-        { id: 3, name: "Minimalist Gold Watch", category: "ACCESSORIES", price: "$250.00", image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=500&q=60", rating: 4.5 },
-        { id: 4, name: "Summer Floral Dress", category: "WOMEN", price: "$45.00", image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=500&q=60", rating: 5 },
-        { id: 5, name: "Leather Weekend Bag", category: "ACCESSORIES", price: "$120.00", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=60", rating: 4 },
-        { id: 6, name: "Slim Fit Chinos", category: "MEN", price: "$35.00", image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=500&q=60", rating: 4 },
-        { id: 7, name: "Evening Silk Gown", category: "WOMEN", price: "$150.00", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=60", rating: 5 },
-        { id: 8, name: "Casual Sneakers", category: "MEN", price: "$60.00", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=60", rating: 3.5 },
-        { id: 9, name: "Aviator Sunglasses", category: "ACCESSORIES", price: "$15.00", image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=500&q=60", rating: 4 },
-        { id: 10, name: "Striped Polo Shirt", category: "MEN", price: "$30.00", image: "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=500&q=60", rating: 4 }
+        { id: 1, name: "Urban Oversized Shirt", category: "MEN", price: "$25.00", image: "assets/img/products/product (1).jpg", rating: 4 },
+        { id: 2, name: "Classic Denim Jacket", category: "MEN", price: "$90.00", image: "assets/img/products/product (2).jpg", rating: 5 },
+        { id: 3, name: "Minimalist Gold Watch", category: "ACCESSORIES", price: "$250.00", image: "assets/img/products/product (3).jpg", rating: 4.5 },
+        { id: 4, name: "Summer Floral Dress", category: "WOMEN", price: "$45.00", image: "assets/img/products/product (4).jpg", rating: 5 },
+        { id: 5, name: "Leather Weekend Bag", category: "ACCESSORIES", price: "$120.00", image: "assets/img/products/product (5).jpg", rating: 4 },
+        { id: 6, name: "Slim Fit Chinos", category: "MEN", price: "$35.00", image: "assets/img/products/product (6).jpg", rating: 4 },
+        { id: 7, name: "Evening Silk Gown", category: "WOMEN", price: "$150.00", image: "assets/img/products/product (7).jpg", rating: 5 },
+        { id: 8, name: "Casual Sneakers", category: "MEN", price: "$60.00", image: "assets/img/products/product (8).jpg", rating: 3.5 },
+        { id: 9, name: "Aviator Sunglasses", category: "ACCESSORIES", price: "$15.00", image: "assets/img/products/product (9).jpg", rating: 4 },
+        { id: 10, name: "Striped Polo Shirt", category: "MEN", price: "$30.00", image: "assets/img/products/product (10).jpg", rating: 4 }
     ];
 
     const itemsPerPage = 3; 
