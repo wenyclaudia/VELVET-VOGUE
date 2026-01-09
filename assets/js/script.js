@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. DYNAMIC GALLERY (Index Page) ---
     const galleryItems = [
-        { title: "Autumn Collection", category: "Lookbook", image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=600&q=80" },
-        { title: "Urban Explorer", category: "Campaign", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" },
-        { title: "Evening Elegance", category: "Style Guide", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=600&q=80" },
-        { title: "Casual Comfort", category: "New Arrivals", image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=600&q=80" },
-        { title: "Street Style", category: "Lookbook", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" },
-        { title: "Summer Vibes", category: "Campaign", image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" },
+        { title: "Autumn Collection", category: "Lookbook", image: "assets/img/gallery/gallery (1).jpg" },
+        { title: "Urban Explorer", category: "Campaign", image: "assets/img/gallery/gallery (2).jpg" },
+        { title: "Evening Elegance", category: "Style Guide", image: "assets/img/gallery/gallery (3).jpg" },
+        { title: "Casual Comfort", category: "New Arrivals", image: "assets/img/gallery/gallery (4).jpg" },
+        { title: "Street Style", category: "Lookbook", image: "assets/img/gallery/gallery (5).jpg" },
+        { title: "Summer Vibes", category: "Campaign", image: "assets/img/gallery/gallery (6).jpg" },
     ];
 
     const galleryContainer = document.getElementById('gallery-container');
