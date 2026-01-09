@@ -1,60 +1,64 @@
 /* ========================================
-   JAVASCRIPT CUSTOM - VELVET & VOGUE
+   CUSTOM JAVASCRIPT - VELVET & VOGUE
 ========================================
 */
 
-// --- 1. INISIALISASI ANIMASI (AOS) ---
-// Mengecek apakah library AOS sudah dimuat, lalu menjalankannya
+// --- 1. AOS (Animate on Scroll) Initialization ---
 document.addEventListener("DOMContentLoaded", function() {
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800, // Durasi animasi (ms)
-            easing: 'ease-in-out',
-            once: true // Animasi hanya jalan sekali
+            duration: 800,       // Animation duration (ms)
+            easing: 'ease-in-out', // Easing function
+            once: true           // Animate only once
         });
     }
 });
 
-// --- 2. LOGIKA GALERI (POIN 2 UAS) ---
+// --- 2. Gallery Modal Logic ---
 function openGallery(imageSrc, captionText) {
-    // Ambil elemen modal
-    var modalElement = document.getElementById('galleryModal');
-    var modalImg = document.getElementById('modalImage');
-    var modalCap = document.getElementById('modalCaption');
+    const modalElement = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCap = document.getElementById('modalCaption');
 
     if (modalElement && modalImg && modalCap) {
-        // Set gambar & caption
+        // Set image and caption
         modalImg.src = imageSrc;
         modalCap.innerText = captionText;
 
-        // Tampilkan Modal (Bootstrap 5)
-        var myModal = new bootstrap.Modal(modalElement);
+        // Show Modal (Bootstrap 5)
+        const myModal = new bootstrap.Modal(modalElement);
         myModal.show();
     }
 }
 
-// --- 3. VALIDASI FORM KONTAK (SEDERHANA) ---
-// Hanya jalan jika ada elemen <form> di halaman tersebut (misal di contact.html)
-var contactForm = document.querySelector("form");
+// --- 3. Contact Form Validation (Improved) ---
+const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
     contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Mencegah reload halaman
-        
-        // Ambil data input
-        var inputs = contactForm.querySelectorAll("input, textarea");
-        var isFilled = true;
+        event.preventDefault();
 
-        inputs.forEach(function(input) {
-            if(input.value.trim() === "") {
-                isFilled = false;
+        const inputs = contactForm.querySelectorAll("input, textarea");
+        let isValid = true;
+
+        // Clear previous validation states
+        inputs.forEach(input => {
+            input.classList.remove('is-invalid');
+        });
+
+        // Check each input
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                isValid = false;
+                input.classList.add('is-invalid');
             }
         });
 
-        if (!isFilled) {
-            alert("Harap lengkapi semua kolom!");
+        if (isValid) {
+            // Simulate successful submission
+            alert("Message sent successfully! (Simulation)");
+            contactForm.reset();
         } else {
-            alert("Pesan berhasil terkirim! (Simulasi)");
-            contactForm.reset(); // Kosongkan form
+            // Optionally, you could show a general error message here
         }
     });
 }

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Velvet & Vogue</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">VELVET & VOGUE</a>
@@ -33,21 +35,106 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="ms-3">
-                    <a href="products.html" class="btn btn-dark rounded-pill">Shop Now</a>
+                    <a href="products.html" class="btn btn-primary">Shop Now</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="py-5 mt-5">
+    <header class="page-header py-5">
         <div class="container text-center">
-            <h2 class="fw-bold mb-4">Who We Are</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">
-                Velvet & Vogue adalah brand fashion modern yang didirikan pada tahun 2024. 
-                Kami berdedikasi untuk memberikan gaya terbaik dengan kualitas premium bagi pria dan wanita.
-            </p>
+            <h1 class="display-4 fw-bold">About Velvet & Vogue</h1>
+            <p class="lead">Crafting the future of fashion with passion and precision.</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="assets/img/large/img1.png" class="img-fluid rounded shadow" alt="Our Story">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold">Our Story</h2>
+                    <p class="text-muted">Founded in 2024, Velvet & Vogue was born out of a desire to bring a fresh perspective to the fashion industry. We believe that style is a form of self-expression, and our goal is to provide our customers with a curated selection of high-quality, contemporary clothing that empowers them to feel confident and chic.</p>
+                    <p class="text-muted">Our design philosophy is rooted in a blend of classic silhouettes and modern trends. We are committed to using premium materials and ethical manufacturing practices to create pieces that are not only beautiful but also built to last.</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet The Team</h2>
+                <p>The creative minds behind Velvet & Vogue</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="https://i.pravatar.cc/150?img=1" class="img-fluid rounded-circle mb-3" alt="Team Member">
+                    <h5 class="fw-bold">Jane Doe</h5>
+                    <p class="text-muted">Founder & Creative Director</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://i.pravatar.cc/150?img=2" class="img-fluid rounded-circle mb-3" alt="Team Member">
+                    <h5 class="fw-bold">John Smith</h5>
+                    <p class="text-muted">Head of Design</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://i.pravatar.cc/150?img=3" class="img-fluid rounded-circle mb-3" alt="Team Member">
+                    <h5 class="fw-bold">Emily White</h5>
+                    <p class="text-muted">Marketing Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>VELVET & VOGUE</h5>
+                    <p>Redefining modern fashion with our curated collections for the style-savvy individual.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="products.html">Women</a></li>
+                        <li><a href="products.html">Men</a></li>
+                        <li><a href="products.html">Accessories</a></li>
+                        <li><a href="promo.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Subscribe to our Newsletter</h5>
+                    <p>Get exclusive updates on new arrivals and special offers.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center pt-4 border-top border-secondary">
+                <p>&copy; 2026 Velvet & Vogue. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
