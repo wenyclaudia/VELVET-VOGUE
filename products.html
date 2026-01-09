@@ -24,6 +24,7 @@
                             Collection
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">All Products</a></li>
                             <li><a class="dropdown-item" href="products.html">Women</a></li>
                             <li><a class="dropdown-item" href="products.html">Men</a></li>
                             <li><a class="dropdown-item" href="products.html">Accessories</a></li>
@@ -48,104 +49,220 @@
         </div>
     </header>
 
-    <section class="py-5">
-        <div class="container">
-            <ul class="nav nav-pills justify-content-center mb-5" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="women-tab" data-bs-toggle="tab" data-bs-target="#women" type="button" role="tab" aria-controls="women" aria-selected="true">Women</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="men-tab" data-bs-toggle="tab" data-bs-target="#men" type="button" role="tab" aria-controls="men" aria-selected="false">Men</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="acc-tab" data-bs-toggle="tab" data-bs-target="#accessories" type="button" role="tab" aria-controls="accessories" aria-selected="false">Accessories</button>
-                </li>
-            </ul>
+    <main class="container py-5">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <aside class="col-lg-3">
+                <div class="filters-sidebar">
+                    <h4 class="mb-4">Filters</h4>
 
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="women" role="tabpanel" aria-labelledby="women-tab">
-                    <div class="row g-4">
-                        <!-- Product 1 -->
-                        <div class="col-md-3">
-                            <div class="product-card">
-                                <img src="assets/img/products/shirt.png" class="card-img-top" alt="Product">
-                                <div class="card-body">
-                                    <h5 class="card-title">Summer Blouse</h5>
-                                    <p class="card-text">$30.00</p>
-                                    <a href="#" class="btn btn-outline-primary w-100">View Details</a>
+                    <!-- Category Filter -->
+                    <div class="mb-4">
+                        <h5>Category</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-dark">Women (12)</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Men (8)</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Accessories (6)</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Shoes (4)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="mb-4">
+                        <h5>Size</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="size-badge">XS</span>
+                            <span class="size-badge">S</span>
+                            <span class="size-badge active">M</span>
+                            <span class="size-badge">L</span>
+                            <span class="size-badge">XL</span>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="mb-4">
+                        <h5>Price Range</h5>
+                        <input type="range" class="form-range" min="0" max="500" step="10" id="priceRange">
+                        <div class="d-flex justify-content-between">
+                            <span>$0</span>
+                            <span>$500</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary w-100">Apply Filters</button>
+                </div>
+            </aside>
+
+            <!-- Products Grid -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <span>Showing 1-8 of 26 results</span>
+                    <select class="form-select" style="width: auto;">
+                        <option selected>Sort by latest</option>
+                        <option value="1">Sort by price: low to high</option>
+                        <option value="2">Sort by price: high to low</option>
+                        <option value="3">Sort by rating</option>
+                    </select>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Product 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card-new">
+                            <div class="product-image-container">
+                                <img src="https://placehold.co/400x500/EADBC8/000000?text=Velvet" alt="Product Image">
+                                <div class="product-hover-overlay">
+                                    <a href="#" class="btn btn-outline-light"><i class="fas fa-search"></i> Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">WOMEN</div>
+                                <h5 class="product-title">Chic Summer Dress</h5>
+                                <div class="product-price">$75.00</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
                                 </div>
                             </div>
                         </div>
-                        <!-- Product 2 -->
-                        <div class="col-md-3">
-                            <div class="product-card">
-                                <img src="assets/img/large/img1.png" class="card-img-top" alt="Product">
-                                <div class="card-body">
-                                    <h5 class="card-title">Evening Gown</h5>
-                                    <p class="card-text">$120.00</p>
-                                    <a href="#" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card-new">
+                            <div class="product-image-container">
+                                <img src="https://placehold.co/400x500/102C57/FFFFFF?text=Vogue" alt="Product Image">
+                                <div class="product-hover-overlay">
+                                    <a href="#" class="btn btn-outline-light"><i class="fas fa-search"></i> Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">MEN</div>
+                                <h5 class="product-title">Classic Denim Jacket</h5>
+                                <div class="product-price">$90.00</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card-new">
+                            <div class="product-image-container">
+                                <img src="https://placehold.co/400x500/F8F0E5/000000?text=Velvet" alt="Product Image">
+                                <div class="product-hover-overlay">
+                                    <a href="#" class="btn btn-outline-light"><i class="fas fa-search"></i> Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">ACCESSORIES</div>
+                                <h5 class="product-title">Leather Crossbody Bag</h5>
+                                <div class="product-price">$120.00</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Product 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card-new">
+                             <div class="product-image-container">
+                                <img src="https://placehold.co/400x500/DAC0A3/000000?text=Vogue" alt="Product Image">
+                                <div class="product-hover-overlay">
+                                    <a href="#" class="btn btn-outline-light"><i class="fas fa-search"></i> Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">WOMEN</div>
+                                <h5 class="product-title">High-Waisted Trousers</h5>
+                                <div class="product-price">$85.00</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card-new">
+                            <div class="product-image-container">
+                                <img src="https://placehold.co/400x500/1B4242/FFFFFF?text=Velvet" alt="Product Image">
+                                <div class="product-hover-overlay">
+                                    <a href="#" class="btn btn-outline-light"><i class="fas fa-search"></i> Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">MEN</div>
+                                <h5 class="product-title">Linen Button-Up Shirt</h5>
+                                <div class="product-price">$60.00</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card-new">
+                            <div class="product-image-container">
+                                <img src="https://placehold.co/400x500/5C5470/FFFFFF?text=Vogue" alt="Product Image">
+                                <div class="product-hover-overlay">
+                                    <a href="#" class="btn btn-outline-light"><i class="fas fa-search"></i> Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">ACCESSORIES</div>
+                                <h5 class="product-title">Minimalist Gold Watch</h5>
+                                <div class="product-price">$250.00</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="men" role="tabpanel" aria-labelledby="men-tab">
-                    <div class="row g-4">
-                        <!-- Product 1 -->
-                        <div class="col-md-3">
-                            <div class="product-card">
-                                <img src="assets/img/products/jacket.png" class="card-img-top" alt="Product">
-                                <div class="card-body">
-                                    <h5 class="card-title">Classic Denim Jacket</h5>
-                                    <p class="card-text">$50.00</p>
-                                    <a href="#" class="btn btn-outline-primary w-100">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                         <!-- Product 2 -->
-                         <div class="col-md-3">
-                            <div class="product-card">
-                                <img src="assets/img/large/img2.png" class="card-img-top" alt="Product">
-                                <div class="card-body">
-                                    <h5 class="card-title">Casual T-Shirt</h5>
-                                    <p class="card-text">$20.00</p>
-                                    <a href="#" class="btn btn-outline-primary w-100">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="accessories" role="tabpanel" aria-labelledby="acc-tab">
-                    <div class="row g-4">
-                        <!-- Product 1 -->
-                        <div class="col-md-3">
-                            <div class="product-card">
-                                <img src="assets/img/products/watch.png" class="card-img-top" alt="Product">
-                                <div class="card-body">
-                                    <h5 class="card-title">Leather Watch</h5>
-                                    <p class="card-text">$95.00</p>
-                                    <a href="#" class="btn btn-outline-primary w-100">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product 2 -->
-                        <div class="col-md-3">
-                            <div class="product-card">
-                                <img src="assets/img/large/img3.png" class="card-img-top" alt="Product">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sun Glasses</h5>
-                                    <p class="card-text">$40.00</p>
-                                    <a href="#" class="btn btn-outline-primary w-100">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer class="footer">
         <div class="container">

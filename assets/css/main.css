@@ -2,6 +2,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #4A4A4A; /* Dark Gray for text */
     background-color: #FDFDFD; /* Off-white background */
+    padding-top: 80px;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-brand {
@@ -168,4 +169,245 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 .footer .social-icons a:last-child {
     margin-right: 0;
+}
+
+/* -- Page Headers -- */
+.page-header {
+    background-color: #f8f9fa;
+}
+
+/* -- Product Page Specific Styles -- */
+.filters-sidebar {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.filters-sidebar h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.filters-sidebar .list-unstyled li {
+    margin-bottom: 0.5rem;
+}
+
+.filters-sidebar .list-unstyled a:hover {
+    color: #005f73 !important;
+}
+
+.size-badge {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.size-badge:hover, .size-badge.active {
+    background-color: #005f73;
+    color: #fff;
+    border-color: #005f73;
+}
+
+.pagination .page-item .page-link {
+    color: #005f73;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #005f73;
+    border-color: #005f73;
+    color: #fff;
+}
+
+
+/* -- New Product Card Design -- */
+.product-card-new {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.product-card-new:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.product-image-container {
+    position: relative;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card-new:hover .product-hover-overlay {
+    opacity: 1;
+}
+
+.product-hover-overlay .btn {
+    border-radius: 50px;
+    padding: 10px 25px;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-category {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6c757d;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #005f73;
+    margin-bottom: 0.5rem;
+}
+
+.product-rating {
+    color: #FFD700; /* Gold color for stars */
+}
+
+/* ========================================
+   NEW STYLES FOR REFACTORING
+======================================== */
+
+/* --- Floating Button --- */
+.floating-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1030;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    background-color: #128C7E; /* Darker WhatsApp Green */
+    color: #fff;
+}
+
+
+/* --- Dynamic Gallery --- */
+.gallery-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+}
+
+.gallery-card-content {
+    color: #fff;
+    padding: 1.5rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.gallery-card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.gallery-card-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+#galleryModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
 }
