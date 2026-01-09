@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet & Vogue - Modern Fashion Store</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        console.log("Google Analytics Placeholder Loaded");
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">VELVET & VOGUE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Collection
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">Women</a></li>
+                            <li><a class="dropdown-item" href="products.html">Men</a></li>
+                            <li><a class="dropdown-item" href="products.html">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="promo.html">Main Event</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="ms-3">
+                    <a href="products.html" class="btn btn-dark rounded-pill">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="vh-100 d-flex align-items-center" 
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/hero-bg.png') center/cover no-repeat;">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold text-white px-4 py-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);" data-aos="fade-up">
+                NEW ARRIVALS 2026
+            </h1>
+            <p class="lead text-white mt-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);" data-aos="fade-up" data-aos-delay="100">
+                Elevate your style with our latest collection.
+            </p>
+            <br>
+            <a href="products.html" class="btn btn-light btn-lg mt-4 shadow rounded-pill px-5 fw-bold" data-aos="fade-up" data-aos-delay="200">
+                Explore Collection
+            </a>
+        </div>
+    </header>
+
+    <section id="products" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold">Trending Now</h2>
+                    <p class="text-muted">Pilihan fashion terbaik minggu ini</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="assets/img/products/shirt.png" class="card-img-top" alt="Urban Shirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Urban Oversized Shirt</h5>
+                            <p class="card-text text-muted">Rp 249.000</p>
+                            <a href="#" class="btn btn-outline-dark w-100">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="assets/img/products/jacket.png" class="card-img-top" alt="Denim Jacket">
+                        <div class="card-body">
+                            <h5 class="card-title">Denim Jacket Classic</h5>
+                            <p class="card-text text-muted">Rp 499.000</p>
+                            <a href="#" class="btn btn-outline-dark w-100">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                         <img src="assets/img/products/watch.png" class="card-img-top" alt="Minimalist Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Minimalist Watch</h5>
+                            <p class="card-text text-muted">Rp 899.000</p>
+                            <a href="#" class="btn btn-outline-dark w-100">Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light py-4 border-top mt-5">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2026 Velvet & Vogue. Designed by Kelompok [Nama Kelompok].</p>
+            <div class="mt-2">
+                <a href="#" class="text-dark mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('mouseover', initLandbot, { once: true });
+        window.addEventListener('touchstart', initLandbot, { once: true });
+        function initLandbot() {
+          var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+          s.addEventListener('load', function() {
+            var myLandbot = new Landbot.Livechat({
+              configUrl: 'https://chats.landbot.io/v3/H-123456-EXAMPLE/index.json',
+            });
+          });
+          s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+          var x = document.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
